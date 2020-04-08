@@ -4,9 +4,9 @@
 
       contains
 
+! Takes in Matrices A(i,j),B(k,l), assumed 2D, returns Kronecker Product C(i*k,j*l)
       function KronProd(A,B) result(C)
        IMPLICIT NONE
-! This should really be a Function!
        real, dimension (:,:), intent(in)  :: A, B
        real, dimension (:,:), allocatable :: C
        integer :: i = 0, j = 0, k = 0, l = 0
@@ -28,8 +28,9 @@
     
       end function KronProd
        
+! Takes in Matrices A(i,j),B(k,l), assumed 2D, returns Direct sum
+! C(i+k,j+l)
       function DirSum(A,B) result(C)
-! This should also be a function!
        real, dimension (:,:), intent(in)  :: A, B
        real, dimension (:,:), allocatable :: C
        integer :: p = 0, q = 0
@@ -47,7 +48,7 @@
     
        end function DirSum
 
-! Subroutine for the direct sum of two vectors
+! Takes 2 vectors, A(i),B(j), returns Direct Sum C(i+j)
       function VecDirSum(A,B) result(C)
        real, dimension (:), intent(in)  :: A, B
        real, dimension (:), allocatable :: C
