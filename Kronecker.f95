@@ -19,9 +19,9 @@
        do i = 1,size(A,1)
         do j = 1,size(A,2)
          n=(i-1)*size(B,1) + 1
-         m=n+size(B,1)
+         m=n+size(B,1) - 1
          p=(j-1)*size(B,2) + 1
-         q=p+size(B,2) 
+         q=p+size(B,2) - 1
          C(n:m,p:q) = A(i,j)*B
         enddo
        enddo
